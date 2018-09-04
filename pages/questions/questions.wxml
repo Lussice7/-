@@ -1,0 +1,38 @@
+<view class="question_page" hover-class="none" hover-stop-propagation="false">
+    <view wx:for="{{questions}}" wx:key="unique" wx:for-index="index" class="{{selected==index?'show':'hide'}}" data-id="{{index}}" data-answer="{{item.answer}}">
+        {{item.question}}
+        <view class="answer">
+            <checkbox-group wx:if="{{item.flag!=1}}" bindchange="checkboxChange">
+                <label class="checkbox" wx:for="{{item.option}}" wx:for-item="items" wx:key="unique">
+                    <checkbox value="{{items.value}}" />
+                    {{items.desc}}
+                </label>
+            </checkbox-group>
+            <radio-group class="radio-group" wx:else bindchange="listenerRadioGroup">
+                <label class="radio" wx:for="{{item.option}}" wx:for-item="items" wx:key="unique">
+                    <radio value="{{items.value}}" data-value="{{items.value}}" />
+                    {{items.desc}}
+                </label>
+            </radio-group>
+        </view>
+        <view class="result {{result==true?'show':'hide'}}">
+            <view wx:if="{{selected==index&&isShow==true}}">
+                答案：
+                <view class="green">正确</view>
+            </view>
+            <view wx:if="{{selected==index&&isShow==false}}">
+                答案：
+                <view class="red">错误</view>
+            </view>
+        </view>
+        <view class="explain {{result?'show':'hide'}}">
+            <view>解析：{{item.analysis.text}}</view>
+        </view>
+        <view class="sure_btn">
+            <button bind:tap="ascertain" data-answer="{{item.answer}}" data-num="{{index}}" data-grade="{{item.grade}}">确定</button>
+        </view>
+        <view data-num="{{index}}" bindtap="nextquestion">
+            下一题
+        </view>
+    </view>
+</view>

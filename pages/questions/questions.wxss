@@ -1,0 +1,46 @@
+.question_page{
+  color:#000;
+  padding:10rpx;
+}
+.green{
+  color:green;
+}
+.red{
+  color:red;
+}
+.show{
+  display:block;
+}
+.hide{
+  display:none;
+}
+.question_page view{
+  font-size:29rpx;
+}
+.question_page .answer{
+  font-size:28rpx;
+}
+.question_page .answer label{
+  display:block;
+}
+.question_page .answer .wx-checkbox-input{  
+   /* 自定义样式.... */
+  border-radius: 3rpx;
+  height: 26rpx;
+  width: 26rpx;
+  margin-top: -4rpx;
+}
+.question_page .answer .wx-radio-input{
+  width:26rpx;
+  height:26rpx;
+}
+.question_page .result .green,.question_page .result .red{
+  display:inline-block;
+}
+.sure_btn button{
+  width:20%;
+  margin:0 auto;
+  font-size:15px;
+  background:green;
+  color:#fff;
+}

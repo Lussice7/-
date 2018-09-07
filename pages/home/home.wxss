@@ -1,0 +1,56 @@
+page{
+  background:#efefef;
+}
+.clearfix {
+  overflow: auto;
+  _height: 1%;
+}
+swiper{
+  height:300rpx;
+  background:#fff;
+  padding-bottom:12rpx;
+}
+swiper image{
+  width:100%;
+  height:300rpx;
+}
+image.jxkc{
+    width:50rpx;
+    height:50rpx;
+    margin-right:10rpx;
+    vertical-align:middle;
+}
+.jxkc_title{
+    font-size:25rpx;
+    text-align: center;
+    margin-top:14rpx;
+}
+.jxkc_choose{
+    padding:14rpx 20rpx;
+}
+.jxkc_choose image{
+    width:237rpx;
+    height:130rpx;
+}
+.lesson{
+    padding:14rpx;
+}
+.lesson_title{
+    border-left:2px solid #127bf2;
+    padding-left:5px;
+    font-size:25rpx;
+    
+}
+.lesson_class image{
+    width:300rpx;
+    height:250rpx;
+}
+.lesson_class:nth-child(odd){
+  float:left;
+}
+.lesson_class:nth-child(even){
+  float:right;
+}
+.coursename{
+    font-size:25rpx;
+}

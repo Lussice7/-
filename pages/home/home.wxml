@@ -1,0 +1,44 @@
+<view class="" hover-class="none" hover-stop-propagation="false">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+        circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}">
+        <block wx:for="{{banner}}" wx:for-item="item" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item.imageUrl}}" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="jxkc_title" hover-class="none" hover-stop-propagation="false">
+        <image class="jxkc" src="../../image/selectc.png" />课程分类
+    </view>
+    <view class="jxkc_choose" hover-class="none" hover-stop-propagation="false">
+        <block wx:for="{{jxclass}}" wx:key="unique">
+            <image class="" src="{{item}}" />
+        </block>
+    </view>
+    <view class="jxkc_title" hover-class="none" hover-stop-propagation="false">
+        <image class="jxkc" src="../../image/selectc.png" />精选课程
+    </view>
+    <view class="lesson" hover-class="none" hover-stop-propagation="false">
+        <block wx:for="{{classes}}" wx:key="{{index}}">
+            <view class="lesson_title"> {{item.cateName}}</view>
+            <view class="clearfix" hover-class="none" hover-stop-propagation="false">
+                <block wx:for="{{item.courses}}" wx:for-item="items">
+                    <view class="lesson_class" hover-class="none" hover-stop-propagation="false">
+                        <image class="" src="{{items.courseImagePath}}" />
+                        <view class="coursename">{{items.courseName}}</view>
+                        <view class="coursetext" hover-class="none" hover-stop-propagation="false">
+                            <text class="coursehour">
+                                {{items.courseHours}}学时
+                            </text>
+                            <text class="teacher" selectable="false" space="false" decode="false">
+                                {{items.teacher}}
+                            </text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+
+
+        </block>
+    </view>
+</view>

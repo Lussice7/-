@@ -1,0 +1,30 @@
+<swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" duration="{{swiper.duration}}" current="{{swiper.current}}" bindchange="bindchange">
+    <block wx:for="{{questions}}" wx:key="unique" wx:for-index="index">
+        <swiper-item>
+            <view data-id="{{index}}" data-answer="{{item.answer}}">
+                {{item.question}}
+                <view class="answer">
+                    <checkbox-group wx:if="{{item.flag!=1}}" bindchange="checkboxChange" data-answer="{{item.answer}}" data-grade="{{item.grade}}" data-fid="{{index}}">
+                        <label class="checkbox" wx:for="{{item.option}}" wx:for-item="items" wx:key="unique">
+                            <checkbox value="{{items.value}}" />
+                            {{items.desc}}
+                        </label>
+                    </checkbox-group>
+                    <radio-group class="radio-group" wx:else bindchange="listenerRadioGroup" data-answer="{{item.answer}}" data-grade="{{item.grade}}" data-fix="{{index}}">
+                        <label class="radio" wx:for="{{item.option}}" wx:for-item="items" wx:key="unique">
+                            <radio value="{{items.value}}" data-value="{{items.value}}" />
+                            {{items.desc}}
+                        </label>
+                    </radio-group>
+                </view>
+            </view>
+        </swiper-item>
+    </block>
+</swiper>
+<view class="prev arrow" bindtap="prevQuestion">
+    上一题
+</view>
+<view class="jiaojuan" bindtap="submit">交卷</view>
+<view class="next arrow" bindtap="nextQuestion">
+    下一题
+</view>

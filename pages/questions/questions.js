@@ -6,7 +6,7 @@ Page({
    */
   data: {
     questions:[],
-    selected: 10,
+    selected: 0,
     chooseAnswer:'',
     correctAnswer:[],
     isShow:false,
@@ -68,7 +68,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+   
   },
   checkboxChange: function (e) {
       var str='';
@@ -109,4 +109,5 @@ Page({
         result:false
     })
   }
+  
 })
